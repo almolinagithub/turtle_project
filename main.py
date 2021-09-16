@@ -12,11 +12,19 @@ screen.colormode(255)
 screen.screensize(500, 500)
 
 colors = colorgram.extract("/Users/admin/PycharmProjects/turtle_project/images.jpg", 20)
+color_list = []
 
+for color in colors:
+    r = color.rgb.r
+    g = color.rgb.g
+    b = color.rgb.b
+    color_rgb = (r, g, b)
+    color_list.append(color_rgb)
+print(color_list)
 
 def print_colored_dot(color):
     turtle.pendown()
-    rgb = color.rgb
+    rgb = random.choice(color_list)
     turtle.color(rgb)
     turtle.begin_fill()
     turtle.circle(10)
